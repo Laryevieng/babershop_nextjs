@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #ededed;
+  --color-primary: #1e5eff;
+  --color-primary-dark: #123c8c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #050505;
+  color: #ededed;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e5eff;
+}
+
+/* Text glow & subtle luxury shadows */
+.text-glow {
+  text-shadow: 0 0 25px rgba(30, 94, 255, 0.55);
+}
+
+.box-glow {
+  box-shadow: 0 0 35px -5px rgba(30, 94, 255, 0.3);
+}
+
+.box-glow-gold {
+  box-shadow: 0 0 35px -5px rgba(234, 179, 8, 0.2);
+}
+
+/* Gradient text utility */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #ffffff 20%, #93c5fd 60%, #1e5eff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
