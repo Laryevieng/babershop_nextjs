@@ -37,10 +37,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/40 backdrop-blur-md shadow-[0_0_15px_rgba(30,94,255,0.25)]"
+            className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/40 backdrop-blur-md shadow-[0_0_15px_rgba(30,94,255,0.25)]"
           >
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
-            <span className="w-2 h-2 rounded-full bg-blue-500 -ml-3"></span>
+            <div className="w-5 h-5 rounded-full p-[1px] bg-gradient-to-tr from-blue-500 to-indigo-400 overflow-hidden shrink-0">
+              <img src="/images/logo.png" alt="Logo" className="w-full h-full object-cover rounded-full" />
+            </div>
             <span className="text-xs font-bold tracking-widest text-blue-300 uppercase">
               CAHAYA BARBERSHOP • KUNINGAN
             </span>
@@ -51,7 +52,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-white leading-[1.08]"
+            className="text-3xl sm:text-5xl lg:text-7xl font-serif font-black tracking-tight text-white leading-[1.1] sm:leading-[1.08] break-words"
           >
             LOOK SHARP. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 text-glow">
@@ -146,16 +147,16 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
 
               {/* Interactive Center 3D Floating Badge */}
               <motion.div
-                whileHover={{ scale: 1.08 }}
+                whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => onNavigate('booking')}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer bg-gradient-to-r from-[#123C8C] via-[#1E5EFF] to-[#123C8C] p-0.5 rounded-xl shadow-[0_0_40px_rgba(30,94,255,0.85)] border border-blue-400/60 transition-all duration-300 group/btn z-20"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer bg-gradient-to-r from-[#123C8C] via-[#1E5EFF] to-[#123C8C] p-0.5 rounded-xl shadow-[0_0_40px_rgba(30,94,255,0.85)] border border-blue-400/60 transition-all duration-300 group/btn z-20 whitespace-nowrap"
               >
-                <div className="bg-black/85 backdrop-blur-md px-6 py-4 rounded-[10px] text-center border border-blue-500/30">
-                  <span className="block text-[10px] font-bold tracking-[0.3em] text-blue-300 uppercase">
+                <div className="bg-black/85 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-4 rounded-[10px] text-center border border-blue-500/30">
+                  <span className="block text-[9px] sm:text-[10px] font-bold tracking-[0.25em] sm:tracking-[0.3em] text-blue-300 uppercase">
                     RESERVE YOUR CHAIR
                   </span>
-                  <span className="block text-lg sm:text-xl font-serif font-bold text-white mt-0.5 group-hover/btn:text-blue-300 transition-colors">
+                  <span className="block text-base sm:text-xl font-serif font-bold text-white mt-0.5 group-hover/btn:text-blue-300 transition-colors">
                     Cahaya Barbershop
                   </span>
                 </div>
@@ -164,8 +165,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               {/* Bottom Chair Badge Info */}
               <div className="absolute bottom-5 left-5 right-5 bg-black/80 backdrop-blur-md p-3.5 rounded-xl border border-white/15 flex items-center justify-between z-20 shadow-xl">
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 rounded-lg bg-blue-600/30 border border-blue-500/40 text-blue-400">
-                    <Scissors size={18} />
+                  <div className="w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-blue-600 to-indigo-500 shadow-md shrink-0">
+                    <img
+                      src="/images/logo.png"
+                      alt="CAHAYA BARBERSHOP"
+                      className="w-full h-full object-cover rounded-full bg-black"
+                    />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-white uppercase tracking-wider">CAHAYA BARBERSHOP</p>

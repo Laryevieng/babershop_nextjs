@@ -50,8 +50,9 @@ export const SHOP_INFO = {
   city: 'KUNINGAN',
   tagline: 'Look Sharp. Feel Confident.',
   description: 'Pengalaman grooming & styling pria premium di Kuningan dengan 3 cabang strategis (Manislor, Jagabaya, Jalaksana). Precision haircut, hair color, korean perm, hingga cukur panggilan & hairdo wedding.',
-  phone: '+62 877-3549-5286',
-  whatsapp: '6287735495286',
+  phone: '+62 852-2123-9852',
+  whatsapp: '6285221239852',
+  logo: '/images/logo.png',
   instagram: '@cahayabarbershop',
   mainAddress: 'Manislor, Kec. Jalaksana, Kabupaten Kuningan, Jawa Barat (Cabang Utama)',
   hours: {
@@ -276,36 +277,71 @@ export const BARBERS_DATA: Barber[] = [
     id: 1,
     name: 'Yayat',
     role: 'Lead Master Barber & Founder',
-    exp: '8+ Tahun Pengalaman',
-    specialty: 'Signature Precision Cut, Classic Fade & Texture',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600',
-    instagram: '@cahayabarbershop'
+    exp: '10+ Tahun Pengalaman',
+    specialty: 'Signature Precision Cut, Classic Fade, Razor Geometry & Style Consultation',
+    image: '/images/barbers/yayat.jpeg',
+    imagePosition: 'center 15%',
+    instagram: '@cahayabarbershop',
+    isFounder: true
   },
   {
     id: 2,
-    name: 'Rian Permana',
-    role: 'Color & Texture Specialist',
-    exp: '5+ Tahun Pengalaman',
-    specialty: 'Korean Perm, Fashion Color & Down Perm',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600',
+    name: 'Eryanto',
+    role: 'Senior Master Barber',
+    exp: '7+ Tahun Pengalaman',
+    specialty: 'Classic Haircut, Scissor Work, Pompadour & Scalp Treatment',
+    image: '/images/barbers/eryanto.jpeg',
+    imagePosition: 'center 18%',
     instagram: '@cahayabarbershop'
   },
   {
     id: 3,
-    name: 'Denny Pratama',
-    role: 'Fade & Beard Craftsman',
+    name: 'Maman',
+    role: 'Master Barber & Stylist',
     exp: '6+ Tahun Pengalaman',
-    specialty: 'Skin Fade, Taper, Beard Detailing & Wedding Grooming',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600',
+    specialty: 'Precision Fade, Taper Cut, Side Part & Hair Styling',
+    image: '/images/barbers/maman.jpeg',
+    imagePosition: 'center 18%',
     instagram: '@cahayabarbershop'
   },
   {
     id: 4,
-    name: 'Andra Wijaya',
+    name: 'Asep',
+    role: 'Fade & Beard Specialist',
+    exp: '5+ Tahun Pengalaman',
+    specialty: 'Skin Fade, Burst Fade, Beard Sculpting & Hot Towel Shave',
+    image: '/images/barbers/asep.jpeg',
+    imagePosition: 'center 18%',
+    instagram: '@cahayabarbershop'
+  },
+  {
+    id: 5,
+    name: 'Ilham',
+    role: 'Color & Texture Specialist',
+    exp: '4+ Tahun Pengalaman',
+    specialty: 'Korean Perm, Down Perm, Root Lift & Fashion Color',
+    image: '/images/barbers/ilham.jpeg',
+    imagePosition: 'center 20%',
+    instagram: '@cahayabarbershop'
+  },
+  {
+    id: 6,
+    name: 'Aditia',
     role: 'Modern Style Consultant',
     exp: '4+ Tahun Pengalaman',
-    specialty: 'Mullet, Textured Crop, Hairlight & Root Lift',
-    image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=600',
+    specialty: 'Textured Crop, Mullet, Two Block & Comma Hair',
+    image: '/images/barbers/aditia.jpeg',
+    imagePosition: 'center 30%',
+    instagram: '@cahayabarbershop'
+  },
+  {
+    id: 7,
+    name: 'Hera',
+    role: 'Creative Barber & Groomer',
+    exp: '3+ Tahun Pengalaman',
+    specialty: 'Modern Gentlemen Cut, Hair Wash & Head Massage',
+    image: '/images/barbers/hera.jpeg',
+    imagePosition: '50% 18%',
     instagram: '@cahayabarbershop'
   }
 ];
@@ -343,7 +379,7 @@ export const GALLERY_DATA: GalleryItem[] = [
     id: 5,
     category: 'cuts',
     title: 'Korean Perm & Texture Look',
-    image: 'https://images.unsplash.com/photo-1517832606589-715003058476?auto=format&fit=crop&q=80&w=800',
+    image: '/images/korean-perm.jpg',
     description: 'Tekstur bergelombang alami gaya Korea yang mudah diatur.'
   },
   {

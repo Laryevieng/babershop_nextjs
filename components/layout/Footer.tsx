@@ -18,16 +18,22 @@ export default function Footer({ onNavigate }: FooterProps) {
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-2">
-                <Scissors className="w-5 h-5 text-blue-500 transform -rotate-45" />
-                <span className="font-serif text-2xl font-black text-white tracking-widest">
+            <div className="flex items-center space-x-3.5">
+              <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-blue-600 via-indigo-500 to-blue-400 shadow-[0_0_20px_rgba(30,94,255,0.4)] shrink-0">
+                <img
+                  src="/images/logo.png"
+                  alt="CAHAYA BARBERSHOP Logo"
+                  className="w-full h-full object-cover rounded-full bg-black"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl font-black text-white tracking-wider leading-none">
                   CAHAYA
                 </span>
+                <span className="text-[9px] tracking-[0.3em] text-blue-400 font-bold uppercase mt-1">
+                  BARBERSHOP
+                </span>
               </div>
-              <span className="text-[9px] tracking-[0.35em] text-blue-400 font-bold uppercase -mt-1 ml-7">
-                BARBERSHOP
-              </span>
             </div>
 
             <p className="text-xs sm:text-sm text-gray-400 max-w-sm leading-relaxed font-light">

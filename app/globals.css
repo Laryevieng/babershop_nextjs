@@ -15,6 +15,8 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -22,6 +24,15 @@ body {
   color: #ededed;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Ensure images don't distort or overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
 }
 
 /* Custom modern scrollbar */
@@ -60,4 +71,13 @@ body {
   background: linear-gradient(135deg, #ffffff 20%, #93c5fd 60%, #1e5eff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Hide scrollbar for touch carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

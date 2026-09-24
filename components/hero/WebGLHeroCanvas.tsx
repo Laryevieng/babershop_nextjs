@@ -10,8 +10,10 @@ export default function WebGLHeroCanvas() {
     if (!canvas || !canvas.parentElement) return;
 
     let animationFrameId: number;
-    let width = (canvas.width = canvas.parentElement.offsetWidth);
-    let height = (canvas.height = canvas.parentElement.offsetHeight);
+    const getDpr = () => Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, 1.5);
+    const dpr = getDpr();
+    let width = (canvas.width = Math.floor(canvas.parentElement.offsetWidth * dpr));
+    let height = (canvas.height = Math.floor(canvas.parentElement.offsetHeight * dpr));
 
     const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
 
@@ -72,9 +74,12 @@ export default function WebGLHeroCanvas() {
 
       void main() {
         vec2 st = gl_FragCoord.xy / u_resolution.xy;
-        st.x *= u_resolution.x / u_resolution.y;
+        float aspect = u_resolution.x / u_resolution.y;
+        
+        // Dynamic center: on mobile portrait it centers nicely, on desktop it accents the right hero visual
+        vec2 center = aspect > 1.0 ? vec2(1.15, 0.45) : vec2(0.5 * aspect, 0.42);
+        st.x *= aspect;
 
-        vec2 center = vec2(1.15, 0.45);
         float d = distance(st, center);
 
         float wave = sin(st.x * 2.8 + u_time * 0.7) * cos(st.y * 2.8 + u_time * 0.4) * 0.18;
@@ -129,8 +134,9 @@ export default function WebGLHeroCanvas() {
 
     const handleResize = () => {
       if (!canvas || !canvas.parentElement) return;
-      width = canvas.width = canvas.parentElement.offsetWidth;
-      height = canvas.height = canvas.parentElement.offsetHeight;
+      const currentDpr = getDpr();
+      width = canvas.width = Math.floor(canvas.parentElement.offsetWidth * currentDpr);
+      height = canvas.height = Math.floor(canvas.parentElement.offsetHeight * currentDpr);
       gl.viewport(0, 0, width, height);
     };
 

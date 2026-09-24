@@ -109,8 +109,10 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-widest uppercase">
-              <Sparkles size={12} />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-widest uppercase">
+              <div className="w-4 h-4 rounded-full overflow-hidden border border-blue-400/40 shrink-0">
+                <img src="/images/logo.png" alt="Logo" className="w-full h-full object-cover" />
+              </div>
               <span>RESERVASI ONLINE 3 CABANG</span>
             </div>
 
@@ -156,7 +158,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-7 bg-[#0c0c12] rounded-3xl p-8 sm:p-10 border border-white/10 shadow-[0_25px_70px_rgba(0,0,0,0.9)] relative"
+            className="lg:col-span-7 bg-[#0c0c12] rounded-3xl p-5 sm:p-8 lg:p-10 border border-white/10 shadow-[0_25px_70px_rgba(0,0,0,0.9)] relative"
           >
             {/* Success Alert Banner */}
             <AnimatePresence>
@@ -176,7 +178,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
             <form onSubmit={handleSubmit} className="space-y-6">
               
               {/* Row 1: Name & Phone */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center space-x-1">
                     <span>Nama Lengkap</span>
@@ -190,7 +192,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                       placeholder="e.g. Budi Santoso"
                       value={booking.name}
                       onChange={(e) => setBooking({ ...booking, name: e.target.value })}
-                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
                     />
                   </div>
                 </div>
@@ -205,17 +207,17 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. 087735495286"
+                      placeholder="e.g. 085221239852"
                       value={booking.phone}
                       onChange={(e) => setBooking({ ...booking, phone: e.target.value })}
-                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Row 2: Branch & Service Selection */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 
                 {/* Branch Selection */}
                 <div className="space-y-2">
@@ -228,7 +230,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                     <select
                       value={booking.branch}
                       onChange={(e) => setBooking({ ...booking, branch: e.target.value })}
-                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                     >
                       {BRANCHES_DATA.map((branch) => (
                         <option key={branch.id} value={branch.name} className="bg-[#0e0e14]">
@@ -247,7 +249,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                   <select
                     value={booking.service}
                     onChange={(e) => setBooking({ ...booking, service: e.target.value })}
-                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                   >
                     <optgroup label="✂️ HAIRCUT SERVICES" className="bg-[#0e0e14] font-bold text-blue-400">
                       {haircuts.map((s) => (
@@ -277,7 +279,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
               </div>
 
               {/* Row 3: Barber & Date */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-300 uppercase tracking-wider">
                     Pilihan Barber
@@ -285,7 +287,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                   <select
                     value={booking.barber}
                     onChange={(e) => setBooking({ ...booking, barber: e.target.value })}
-                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                   >
                     <option value="Any Master Barber" className="bg-[#0e0e14]">
                       Any Master Barber (Siapa saja yang siap)
@@ -310,7 +312,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                       min={today}
                       value={booking.date}
                       onChange={(e) => setBooking({ ...booking, date: e.target.value })}
-                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
                     />
                   </div>
                 </div>
@@ -326,7 +328,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                   <select
                     value={booking.time}
                     onChange={(e) => setBooking({ ...booking, time: e.target.value })}
-                    className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
                   >
                     {TIME_SLOTS.map((time) => (
                       <option key={time} value={time} className="bg-[#0e0e14]">
@@ -347,7 +349,7 @@ Mohon konfirmasi ketersediaan jadwal di cabang ${booking.branch}. Terima kasih!`
                   placeholder="Contoh: Ingin potong fade oleh Kang Yayat di cabang Manislor, konsultasi Korean perm, dll..."
                   value={booking.notes}
                   onChange={(e) => setBooking({ ...booking, notes: e.target.value })}
-                  className="w-full bg-[#050505] border border-white/10 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  className="w-full bg-[#050505] border border-white/10 rounded-xl p-4 text-base sm:text-sm text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
                 />
               </div>
 

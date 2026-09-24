@@ -86,17 +86,23 @@ export default function Navbar({ onNavigate }: NavbarProps) {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
           onClick={() => handleNavClick('home')}
-          className="cursor-pointer text-center group flex flex-col items-center select-none"
+          className="cursor-pointer text-left group flex items-center space-x-3 select-none py-1"
         >
-          <div className="flex items-center space-x-2">
-            <Scissors className="w-5 h-5 text-blue-500 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-            <span className="font-serif text-2xl sm:text-3xl tracking-widest font-black text-white group-hover:text-blue-400 transition-colors">
+          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full p-[2px] bg-gradient-to-tr from-blue-600 via-indigo-500 to-blue-400 shadow-[0_0_15px_rgba(30,94,255,0.4)] group-hover:shadow-[0_0_25px_rgba(30,94,255,0.7)] transition-all">
+            <img
+              src="/images/logo.png"
+              alt="CAHAYA BARBERSHOP"
+              className="w-full h-full object-cover rounded-full bg-black"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-serif text-xl sm:text-2xl tracking-wider font-black text-white group-hover:text-blue-400 transition-colors leading-none">
               CAHAYA
             </span>
+            <span className="text-[9px] sm:text-[10px] tracking-[0.3em] text-blue-400 font-bold uppercase mt-1">
+              BARBERSHOP
+            </span>
           </div>
-          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] text-blue-400 font-bold -mt-1 uppercase">
-            BARBERSHOP
-          </span>
         </motion.div>
 
         {/* Desktop Right Navigation */}
@@ -150,6 +156,20 @@ export default function Navbar({ onNavigate }: NavbarProps) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="lg:hidden bg-[#070709]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-6 space-y-4 overflow-hidden"
           >
+            <div className="flex items-center space-x-3 pb-3 border-b border-white/10">
+              <div className="w-9 h-9 rounded-full p-0.5 bg-gradient-to-tr from-blue-600 to-indigo-500 shadow-md shrink-0">
+                <img
+                  src="/images/logo.png"
+                  alt="CAHAYA BARBERSHOP"
+                  className="w-full h-full object-cover rounded-full bg-black"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-lg font-black text-white leading-tight">CAHAYA</span>
+                <span className="text-[8px] tracking-[0.25em] text-blue-400 font-bold uppercase">BARBERSHOP</span>
+              </div>
+            </div>
+
             {NAV_LINKS.map((link, idx) => (
               <motion.button
                 key={link.id}

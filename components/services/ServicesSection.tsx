@@ -36,18 +36,15 @@ const ICON_MAP = {
 };
 
 const CATEGORIES: { id: ServiceCategory; label: string }[] = [
-  { id: 'all', label: 'SEMUA LAYANAN' },
   { id: 'haircut', label: 'HAIRCUT' },
   { id: 'color', label: 'HAIR COLOR' },
-  { id: 'others', label: 'PERM & OTHERS' },
+  { id: 'others', label: 'PERM & OTHER' },
 ];
 
 export default function ServicesSection({ onSelectService }: ServicesSectionProps) {
-  const [activeCategory, setActiveCategory] = useState<ServiceCategory>('all');
+  const [activeCategory, setActiveCategory] = useState<ServiceCategory>('haircut');
 
-  const filteredServices = activeCategory === 'all'
-    ? SERVICES_DATA
-    : SERVICES_DATA.filter((s) => s.category === activeCategory);
+  const filteredServices = SERVICES_DATA.filter((s) => s.category === activeCategory);
 
   return (
     <section id="services" className="py-28 bg-[#050505] relative overflow-hidden">

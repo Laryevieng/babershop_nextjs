@@ -70,7 +70,7 @@ export default function ContactSection() {
         </div>
 
         {/* Interactive Main Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Active Branch Detail Card */}
           <motion.div
@@ -193,51 +193,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-        </div>
-
-        {/* 3 Branches Quick Overview Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          {BRANCHES_DATA.map((b) => (
-            <motion.div
-              key={b.id}
-              whileHover={{ y: -4, borderColor: 'rgba(59, 130, 246, 0.5)' }}
-              onClick={() => setSelectedBranch(b)}
-              className={`p-6 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-4 ${
-                selectedBranch.id === b.id
-                  ? 'bg-blue-950/20 border-blue-500/60 shadow-[0_0_25px_rgba(30,94,255,0.2)]'
-                  : 'bg-[#0a0a0e] border-white/10 hover:border-white/20'
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">
-                    {b.tag}
-                  </span>
-                  {b.isMain && (
-                    <span className="text-[9px] bg-amber-400 text-black font-extrabold px-2 py-0.5 rounded-full">
-                      Pusat
-                    </span>
-                  )}
-                </div>
-                <h4 className="font-serif text-lg font-bold text-white">{b.name}</h4>
-                <p className="text-xs text-gray-400 mt-1 line-clamp-2">{b.address}</p>
-              </div>
-
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
-                <span className="text-emerald-400 font-medium text-[11px]">⏰ 10:00 - 21:00 WIB</span>
-                <a
-                  href={b.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="text-blue-400 hover:text-white font-bold flex items-center space-x-1"
-                >
-                  <span>Maps</span>
-                  <ExternalLink size={12} />
-                </a>
-              </div>
-            </motion.div>
-          ))}
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-export type ServiceCategory = 'all' | 'haircut' | 'color' | 'others';
+export type ServiceCategory = 'haircut' | 'color' | 'others';
 
 export interface ServiceItem {
   id: string;
@@ -30,7 +30,9 @@ export interface Barber {
   exp: string;
   specialty: string;
   image: string;
+  imagePosition?: string;
   instagram: string;
+  isFounder?: boolean;
 }
 
 export type GalleryCategory = 'all' | 'cuts' | 'beard' | 'interior' | 'process';

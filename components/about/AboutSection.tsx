@@ -37,9 +37,13 @@ export default function AboutSection() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="absolute bottom-6 left-6 right-6 sm:right-auto bg-black/85 backdrop-blur-xl p-5 sm:p-6 rounded-xl border border-white/20 shadow-2xl max-w-xs"
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-lg bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
-                    <Scissors size={24} />
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-blue-600 to-indigo-500 shadow-lg flex items-center justify-center shrink-0">
+                    <img
+                      src="/images/logo.png"
+                      alt="Cahaya Barbershop Logo"
+                      className="w-full h-full object-cover rounded-full bg-black"
+                    />
                   </div>
                   <div>
                     <p className="text-3xl font-serif font-black text-white leading-none">5+ TAHUN</p>
@@ -61,7 +65,9 @@ export default function AboutSection() {
             className="lg:col-span-6 space-y-6 text-left"
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-950/60 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-widest uppercase">
-              <Sparkles size={13} />
+              <div className="w-4 h-4 rounded-full overflow-hidden shrink-0">
+                <img src="/images/logo.png" alt="Logo" className="w-full h-full object-cover" />
+              </div>
               <span>TENTANG CAHAYA BARBERSHOP</span>
             </div>
 
